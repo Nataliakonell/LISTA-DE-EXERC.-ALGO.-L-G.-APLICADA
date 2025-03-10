@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+void calcula(int num1, int num2);
+
+int main()
+{
+    int num1, num2;
+
+    // Receber os numeros do usuario
+    cout << "Informe o primeiro numero: ";
+    cin >> num1;
+    cout << "Informe o segundo numero: ";
+    cin >> num2;
+
+    // Verificar se os numeros sao iguais
+    while (num1 == num2)
+    {
+        cout << "Os numeros nao podem ser iguais. Informe novamente." << endl;
+        cout << "Informe o primeiro numero: ";
+        cin >> num1;
+        cout << "Informe o segundo numero: ";
+        cin >> num2;
+    }
+
+    // Chamar a sub-rotina para calcular e exibir os resultados
+    calcula(num1, num2);
+
+    return 0;
+}
+
+void calcula(int num1, int num2)
+{
+    int soma = num1 + num2;
+    int subtracao = num1 - num2;
+    float divisao;
+
+    // Determinar o maior e o menor numero
+    int maior = (num1 > num2) ? num1 : num2;
+    int menor = (num1 < num2) ? num1 : num2;
+
+    divisao = static_cast<float>(maior) / menor;
+
+    // Exibir os resultados
+    cout << "Soma: " << soma << endl;
+    cout << "Subtracao: " << subtracao << endl;
+    cout << "Divisao do maior pelo menor: " << divisao << endl;
+}
