@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+bool valida(char op);
+
+int main()
+{
+    bool flag = false; // se a entrada for válida TRUE senão FALSE
+    char op;           // Opção de cálculo
+
+    while (!flag)
+    {
+        cout << "Informe a opcao: A-a ou P-p: ";
+        cin >> op;
+        flag = valida(op);
+        if (!flag)
+            cout << "Entrada invalida" << endl;
+    }
+    cout << "Entrada aceita!" << endl;
+    return 0;
+}
+
+bool valida(char op)
+{
+    if (op == 'P' || op == 'p' || op == 'A' || op == 'a')
+        return true;
+    else
+        return false;
+}
