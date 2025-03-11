@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+
+bool ehPrimo(int numero);
+
+int main()
+{
+    int numero;
+
+    // Receber o numero do usuario
+    cout << "Informe um numero: ";
+    cin >> numero;
+
+    // Verificar se o numero e primo
+    if (ehPrimo(numero))
+    {
+        cout << "O numero " << numero << " e primo." << endl;
+    }
+    else
+    {
+        cout << "O numero " << numero << " nao e primo." << endl;
+    }
+
+    return 0;
+}
+
+bool ehPrimo(int numero)
+{
+    if (numero <= 1)
+    {
+        return false;
+    }
+    for (int i = 2; i <= numero / 2; ++i)
+    {
+        if (numero % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
