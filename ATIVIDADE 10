@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+void exibirTabuada(int numero);
+
+int main()
+{
+    int numero;
+
+    // Receber o numero do usuario
+    cout << "Informe um numero inteiro: ";
+    cin >> numero;
+
+    // Exibir a tabuada do numero
+    exibirTabuada(numero);
+
+    return 0;
+}
+
+void exibirTabuada(int numero)
+{
+    for (int i = 1; i <= 10; ++i)
+    {
+        cout << i << " x " << numero << " = " << i * numero << endl;
+    }
+}
