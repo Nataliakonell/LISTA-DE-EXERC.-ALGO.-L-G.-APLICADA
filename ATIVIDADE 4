@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+double calculaVolumeEsfera(double raio);
+
+int main()
+{
+    double raio;
+
+    // Receber o raio da esfera do usuario
+    cout << "Informe o raio da esfera: ";
+    cin >> raio;
+
+    // Calcular o volume da esfera
+    double volume = calculaVolumeEsfera(raio);
+
+    // Exibir o volume da esfera
+    cout << "O volume da esfera e: " << volume << endl;
+
+    return 0;
+}
+
+double calculaVolumeEsfera(double raio)
+{
+    // Volume da esfera = (4/3) * pi * raio^3
+    return (4.0 / 3.0) * M_PI * pow(raio, 3);
+}
