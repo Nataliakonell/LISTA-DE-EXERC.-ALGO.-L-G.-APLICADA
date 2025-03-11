@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+void calculaMedia(double n1, double n2, double n3, char tipo, double &media);
+
+int main()
+{
+    double n1, n2, n3, media;
+    char tipo;
+
+    // Receber as notas do usuario
+    cout << "Informe a primeira nota: ";
+    cin >> n1;
+    cout << "Informe a segunda nota: ";
+    cin >> n2;
+    cout << "Informe a terceira nota: ";
+    cin >> n3;
+
+    // Receber o tipo de media
+    cout << "Informe o tipo de media (A para aritmetica, P para ponderada): ";
+    cin >> tipo;
+
+    // Calcular a media
+    calculaMedia(n1, n2, n3, tipo, media);
+
+    // Exibir a media
+    cout << "A media calculada e: " << media << endl;
+
+    return 0;
+}
+
+void calculaMedia(double n1, double n2, double n3, char tipo, double &media)
+{
+    if (tipo == 'A' || tipo == 'a')
+    {
+        // Calcular a media aritmetica
+        media = (n1 + n2 + n3) / 3.0;
+    }
+    else if (tipo == 'P' || tipo == 'p')
+    {
+        // Calcular a media ponderada com pesos 2, 3 e 4
+        media = (n1 * 2 + n2 * 3 + n3 * 4) / 9.0;
+    }
+    else
+    {
+        cout << "Tipo de media invalido!" << endl;
+        media = 0.0;
+    }
+}
