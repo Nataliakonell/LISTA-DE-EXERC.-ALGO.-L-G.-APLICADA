@@ -1,0 +1,95 @@
+#include <iostream>
+
+using namespace std;
+
+bool validaNota(double nota);
+bool validaLetra(char letra);
+void calculaMedia(double n1, double n2, double n3, char tipo, double &media);
+
+int main()
+{
+    double n1, n2, n3, media;
+    char tipo;
+    bool flag;
+
+    // Receber e validar a primeira nota
+    flag = false;
+    while (!flag)
+    {
+        cout << "Informe a primeira nota: ";
+        cin >> n1;
+        flag = validaNota(n1);
+        if (!flag)
+            cout << "Nota invalida!" << endl;
+    }
+
+    // Receber e validar a segunda nota
+    flag = false;
+    while (!flag)
+    {
+        cout << "Informe a segunda nota: ";
+        cin >> n2;
+        flag = validaNota(n2);
+        if (!flag)
+            cout << "Nota invalida!" << endl;
+    }
+
+    // Receber e validar a terceira nota
+    flag = false;
+    while (!flag)
+    {
+        cout << "Informe a terceira nota: ";
+        cin >> n3;
+        flag = validaNota(n3);
+        if (!flag)
+            cout << "Nota invalida!" << endl;
+    }
+
+    // Receber e validar o tipo de media
+    flag = false;
+    while (!flag)
+    {
+        cout << "Informe o tipo de media (A para aritmetica, P para ponderada): ";
+        cin >> tipo;
+        flag = validaLetra(tipo);
+        if (!flag)
+            cout << "Tipo de media invalido!" << endl;
+    }
+
+    // Calcular a media
+    calculaMedia(n1, n2, n3, tipo, media);
+
+    // Exibir a media
+    cout << "A media calculada e: " << media << endl;
+
+    return 0;
+}
+
+bool validaNota(double nota)
+{
+    return (nota >= 0 && nota <= 10);
+}
+
+bool validaLetra(char letra)
+{
+    return (letra == 'A' || letra == 'a' || letra == 'P' || letra == 'p');
+}
+
+void calculaMedia(double n1, double n2, double n3, char tipo, double &media)
+{
+    if (tipo == 'A' || tipo == 'a')
+    {
+        // Calcular a media aritmetica
+        media = (n1 + n2 + n3) / 3.0;
+    }
+    else if (tipo == 'P' || tipo == 'p')
+    {
+        // Calcular a media ponderada com pesos 2, 3 e 4
+        media = (n1 * 2 + n2 * 3 + n3 * 4) / 9.0;
+    }
+    else
+    {
+        cout << "Tipo de media invalido!" << endl;
+        media = 0.0;
+    }
+}
