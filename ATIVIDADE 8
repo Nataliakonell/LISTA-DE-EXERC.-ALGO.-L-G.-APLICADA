@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int calculaIdadeEmDias(int anos, int meses, int dias);
+
+int main()
+{
+    int anos, meses, dias, totalDias;
+
+    // Receber a idade do usuario
+    cout << "Informe a idade em anos: ";
+    cin >> anos;
+    cout << "Informe a idade em meses: ";
+    cin >> meses;
+    cout << "Informe a idade em dias: ";
+    cin >> dias;
+
+    // Calcular a idade em dias
+    totalDias = calculaIdadeEmDias(anos, meses, dias);
+
+    // Exibir a idade em dias
+    cout << "A idade total em dias e: " << totalDias << endl;
+
+    return 0;
+}
+
+int calculaIdadeEmDias(int anos, int meses, int dias)
+{
+    // Considerar que cada ano tem 365 dias e cada mes tem 30 dias
+    return (anos * 365) + (meses * 30) + dias;
+}
