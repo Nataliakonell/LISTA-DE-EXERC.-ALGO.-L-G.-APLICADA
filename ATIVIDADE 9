@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int calculaFatorial(int numero);
+
+int main()
+{
+    int numero;
+
+    // Receber o numero do usuario
+    cout << "Informe um numero inteiro: ";
+    cin >> numero;
+
+    // Calcular o fatorial
+    int fatorial = calculaFatorial(numero);
+
+    // Exibir o fatorial
+    cout << "O fatorial de " << numero << " e: " << fatorial << endl;
+
+    return 0;
+}
+
+int calculaFatorial(int numero)
+{
+    int fatorial = 1;
+    for (int i = 1; i <= numero; ++i)
+    {
+        fatorial *= i;
+    }
+    return fatorial;
+}
